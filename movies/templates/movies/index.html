@@ -1,11 +1,11 @@
-<!doctype html>
-<html>
-<head>
-</head>
-<body>
+{% extends "movies/general.html" %}
 
+
+{% block title %}Fanzone Cinéma{% endblock title %}
+
+{% block content %}
 <section>
-<h2>Films</h2>
+<h2>Films ({{films|length}})</h2>
 <ul>
     {% for film in films %}
     <li><a href="/movies/film/{{film.id}}">{{film.titre}}</a> ({{film.annee}}) </li>
@@ -14,12 +14,11 @@
 </section>
 
 <section>
-<h2>Stars</h2>
+<h2>Stars ({{stars|length}})</h2>
 <ul>
     {% for star in stars %}
     <li><a href="/movies/star/{{star.id}}">{{star.nom}}</a></li>
     {% endfor  %}
 </ul>
 </section>
-</body>
-</html>
+{% endblock %}
