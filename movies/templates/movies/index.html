@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+
+<section>
+<h2>Films</h2>
+<ul>
+    {% for film in films %}
+    <li><a href="/movies/film/{{film.id}}">{{film.titre}}</a> ({{film.annee}}) </li>
+    {% endfor  %}
+</ul>
+</section>
+
+<section>
+<h2>Stars</h2>
+<ul>
+    {% for star in stars %}
+    <li><a href="/movies/star/{{star.id}}">{{star.nom}}</a></li>
+    {% endfor  %}
+</ul>
+</section>
+</body>
+</html>
