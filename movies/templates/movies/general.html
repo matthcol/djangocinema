@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+{% load static %}
+
+<link href="{% static "movies/css/main.css" %}" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+<header>
+<nav>
+<h1>{% block title %}{% endblock %} </h1>
+<ul>
+<li><a href="/movies/">Accueil</a></li>
+<li><a href="/movies/film/1">Films</a></li>
+<li><a href="/movies/star/1">Stars</a></li>
+</ul>
+</nav>
+
+</header>
+
+<main>
+{% block content %}
+{% endblock %}
+
+</main>
+
+
+<footer>
+</footer>
+
+</body>
+</html>
