@@ -12,6 +12,8 @@ from . import views
 urlpatterns = [
     # ex : /movies/
     path('', views.index, name='index'),
+     # ex : /movies/film/
+    path('film/', views.filmlast, name='filmlast'),
     # ex : /movies/film/2
     path('film/<int:film_id>', views.film, name='film'),
     # ex : /movies/star/5

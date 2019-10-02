@@ -12,7 +12,13 @@ class Star(models.Model):
 class Film(models.Model):
     titre = models.CharField(max_length=250)
     annee = models.IntegerField()
-    realisateur = models.ForeignKey(Star, on_delete=models.SET_NULL, null=True)
+    duree = models.IntegerField(null=True)
+    # exemple ManyToOne association
+    realisateur = models.ForeignKey(Star, on_delete=models.SET_NULL, 
+                                    blank=True, null=True)
+    # exemple ManyToMany association
+    acteurs = models.ManyToManyField(Star, related_name="acteurs",
+                                     blank=True)
     
     def __str__(self):
         return "{} ({} - {})".format(
