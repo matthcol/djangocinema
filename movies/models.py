@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Star(models.Model):
     nom = models.CharField(max_length=100)
-    date_naissance = models.DateField()
+    date_naissance = models.DateField(blank=True, null=True)
     
     def __str__(self):
         return f"{self.nom} ({self.date_naissance} - {self.id})"
@@ -12,7 +12,7 @@ class Star(models.Model):
 class Film(models.Model):
     titre = models.CharField(max_length=250)
     annee = models.IntegerField()
-    duree = models.IntegerField(null=True)
+    duree = models.IntegerField(blank=True, null=True)
     # exemple ManyToOne association
     realisateur = models.ForeignKey(Star, on_delete=models.SET_NULL, 
                                     blank=True, null=True)
