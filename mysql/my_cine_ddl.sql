@@ -6,7 +6,6 @@ create table star(
 	num_star integer auto_increment,
 	nom varchar(100) NOT NULL,
 	date_naissance date NULL,
-	sexe varchar(1) NULL,
 	constraint pk_star primary key(num_star)
 );
 
